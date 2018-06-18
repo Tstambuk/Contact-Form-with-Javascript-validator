@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>  
+<html>
+<body>  
+<script src="validator.js" type="text/javascript"></script>
+</head>
+<form action="" id="myform" >
+<p>
+    <label for='ime'>Ime:</label>
+    <input type="text" id="Ime" name="ime" />
+</p>
+<p>
+    <label for='prezime'>Prezime:</label>
+    <input type="text" id="Prezime" name="prezime" />
+</p>
+<p>
+    <label for='email'>EMail:</label>
+    <input type="text" id="EMail" name="email" />
+</p>
+<p>
+    <label for='telefon'>Telefon:</label>
+    <input type="text" id="Telefon" name="telefon" />
+</p>
+
+<p>
+    <input type="submit" name="submit" value="Submit">
+</p>
+</form>
+<script  type="text/javascript">
+ var frmvalidator = new Validator("myform");
+ frmvalidator.addValidation("ime","req","Molimo unesite Ime");
+ frmvalidator.addValidation("ime","maxlen=20",
+        "Max length for FirstName is 20");
+ 
+ frmvalidator.addValidation("prezime","req","Molimo unesite Prezime");
+ frmvalidator.addValidation("prezime","maxlen=20");
+ 
+ frmvalidator.addValidation("email","maxlen=50");
+ frmvalidator.addValidation("email","req","Molimo unesite Email adresu");
+ frmvalidator.addValidation("email","email");
+ 
+ frmvalidator.addValidation("telefon","maxlen=50");
+ frmvalidator.addValidation("telefon","numeric");
+
+
+
+
+ 
+ 
+</script>
+
+
+
+</body>
+</html>
